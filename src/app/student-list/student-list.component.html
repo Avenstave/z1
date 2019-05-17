@@ -1,0 +1,49 @@
+<div class="row">
+</div>
+<div class="col-sm-8">
+  <form class="form-group" [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" [class.error]="!myForm.valid && myForm.dirty">
+    <div style="text-align: center;height: 70px;">
+      <h4>学生管理</h4>
+    </div>
+    <p *ngIf="loginfalid.invalid" class="alert alert-danger alert-dismissible fade show">
+      <strong>错误!</strong>表单无效</p>
+    <div class="form-group" [class.error]="!id.valid && id.touched">
+      <label for="id">学号:</label>
+      <p *ngIf="!id.valid" class="alert alert-info alert-dismissible fade show">
+        <strong>信息!</strong> 请填写学号</p>
+      <input type="id" class="form-control" id="id" [ngClass]="{'is-invalid':id.hasError('required')}" placeholder="请输入用户名" name="id"
+        [formControl]="myForm.controls['id']">
+    </div>
+    <div class="form-group" [class.error]="!name.valid && name.touched">
+      <label for="nameInput">姓名:</label>
+      <p *ngIf="!name.valid" class="alert alert-info alert-dismissible fade show">
+        <strong>信息!</strong> 请填写姓名</p>
+      <input type="text" class="form-control" id="nameInput" [ngClass]="{'is-invalid':name.hasError('required')}" placeholder="请输入用户名"
+        name="name" [formControl]="myForm.controls['name']">
+    </div>
+    <div class="form-group" [class.error]="!sex.valid&&sex.dirty">
+      <label for="sex">性别:</label>
+      <p *ngIf="!sex.valid" class="alert alert-info">
+        <strong>信息!</strong> 请输入性别</p>
+      <input type="sex" class="form-control" id="sex" [ngClass]="{'is-invalid':sex.hasError('required')}" placeholder="请输入密码" name="sex"
+        [formControl]="myForm.controls['sex']">
+    </div>
+    <div class="form-group" [class.error]="!web.valid&&web.dirty">
+      <label for="web">web</label>
+      <p *ngIf="!web.valid" class="alert alert-info alert-dismissible fade show">
+        <strong>信息!</strong> 请填写web成绩</p>
+      <input type="text" class="form-control" id="web" [ngClass]="{'is-invalid':web.hasError('required')}" placeholder="请输入web成绩"
+        name="test" [formControl]="myForm.controls['web']">
+    </div>
+    <div class="form-group" [class.error]="!RFID.valid&&RFID.dirty">
+      <label for="RFID">RFID</label>
+      <p *ngIf="!RFID.valid" class="alert alert-info alert-dismissible fade show">
+        <strong>信息!</strong> 请填写RFID成绩</p>
+      <input type="text" class="form-control" id="RFID" [ngClass]="{'is-invalid':RFID.hasError('required')}" placeholder="请输入RFID成绩"
+        name="text" [formControl]="myForm.controls['RFID']">
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary">提交</button>
+    </div>
+  </form>
+</div>

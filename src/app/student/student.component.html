@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-sm-8">
+    <div style="text-align: center;height: 70px;">
+      <h2>2018-2019第二学期期末成绩</h2>
+    </div>
+    <div style="height: 60px;width: 100px; float: left;;padding: 5px;margin-left: 5px">
+      <button class="btn btn-primary" (click)="toggleShow()">
+        {{btnname()}}
+      </button>
+    </div>
+    <div style="height: 60px;float: left;;padding: 5px;margin-left: 5px">
+      <button class="btn btn-primary" (click)="change()" style="float:20px">
+        显示{{isShow?'必修':'选修'}}
+      </button>
+    </div>
+    <table class="table table-hover table table-striped">
+      <thead>
+        <tr class="stu" style="background: grey;">
+          <td>学号</td>
+          <td>姓名</td>
+          <td>性别</td>
+          <td *ngIf="isShow == 1">web</td>
+          <td>RFID</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let s of students'>
+          <td *ngIf="isMale == 2||s.sex == isMale">{{s.id}}</td>
+          <td *ngIf="isMale == 2 || s.sex == isMale">{{s.name}}</td>
+          <td *ngIf="isMale == 2 || s.sex == isMale">{{s.sex =='1'?'男':'女'}}</td>
+          <td *ngIf="isShow == 1&&(isMale == 2 || s.sex == isMale)">
+            {{s.web.count}}</td>
+          <td *ngIf="isMale == 2 || s.sex == isMale">
+            {{s.RFID.count}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

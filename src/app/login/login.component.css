@@ -1,0 +1,23 @@
+form{
+   border-radius:10px ;
+   border: black solid 1px;
+   padding: 20px;
+   background-color: gainsboro;
+}
+h4{
+    text-align: center;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+    height: 500px;
+}
+.demo{
+    margin-top: 20px;
+}
+.box{
+    margin-top: 35px;
+}
+
+    
